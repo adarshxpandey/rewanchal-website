@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rewanchal Cement - Quality You Can Trust</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="shortcut icon" type="image/png" href="images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --yellow: #FDD835;
+            --red: #D32F2F;
+            --green: #388E3C;
+            --dark: #212121;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--yellow);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        header {
+            position: sticky; top: 0; z-index: 100;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid var(--red);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .header-content {
+            display: flex; align-items: center; justify-content: space-between;
+            height: 80px;
+            padding: 10px 0;
+        }
+        
+        .logo {
+            display: flex; align-items: center; gap: 12px;
+            text-decoration: none; color: white;
+        }
+        
+        .logo-icon {
+            width: 70px; height: 70px; background: var(--red);
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; color: white; font-weight: bold;
+            background-image: url('images/logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        
+        .logo-icon:not([style*="background-image"]) {
+            background-image: none;
+        }
+        
+        .logo-text {
+            font-size: 28px; font-weight: 900; letter-spacing: 1px;
+        }
+        
+        nav { display: flex; gap: 24px; }
+        nav a { text-decoration: none; color: white; font-weight: 600; font-size: 16px; transition: color 0.3s ease; }
+        nav a:hover { color: var(--yellow); }
+        
+        /* Sections */
+        section { padding: 80px 0; }
+        
+        .hero { text-align: center; }
+        .hero h1 { font-size: 4rem; font-weight: 900; margin-bottom: 2rem; }
+        .hero-blocks { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0; }
+        .hero-block {
+            background: rgba(255,255,255,0.9); padding: 2rem; border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .hero-block h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--red); }
+        
+        .about { background: rgba(255,255,255,0.7); }
+        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .about h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        
+        .products { }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        
+        .support { background: rgba(255,255,255,0.7); }
+        .support-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .support-card {
+            background: white; padding: 2rem; border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .contact { }
+        .contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        .contact-info, .contact-form {
+            background: rgba(255,255,255,0.9); padding: 2rem; border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        footer {
+            background: var(--dark); color: white; padding: 3rem 0;
+            
+        }
+        .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+        
+        .btn {
+            display: inline-block; background: var(--red); color: white;
+            padding: 12px 24px; border-radius: 8px; text-decoration: none;
+            font-weight: 600; transition: transform 0.3s;
+        }
+        .btn:hover { transform: scale(1.05); }
+        
+        /* Animations */
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-content, .contact-content { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+            .footer-content { grid-template-columns: 1fr; }
+            
+            /* Mobile layout for products section */
+            .products-hero {
+                position: relative !important;
+                min-height: auto !important;
+            }
+            .products-hero > div:first-child {
+                position: relative !important;
+                width: 100% !important;
+                margin-bottom: 2rem;
+            }
+            .products-hero > div:last-child {
+                position: relative !important;
+                width: 100% !important;
+                top: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#home" class="logo">
+                    <div class="logo-icon">🐯</div>
+                    <div class="logo-text">Rewanchal Cement</div>
+                </a>
+                <nav>
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#products">Products</a>
+                    <a href="#support">Support</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>REWANCHAL CEMENT</h1>
+            <div class="hero-blocks">
+                <div class="hero-block">
+                    <h3>We Believe</h3>
+                    <p><strong>हमारी ताकत आपकी पहचान</strong></p>
+                    <p>Building strong foundations for India's future</p>
+                </div>
+                <div class="hero-block">
+                    <h3>Our Promise</h3>
+                    <p><strong>अच्छा, मजबूत और भरोसेमंद</strong></p>
+                    <p>Quality cement you can trust for every project</p>
+                </div>
+                <div class="hero-block">
+                    <h3>Our Support</h3>
+                    <p><strong>स्थानीय तकनीकी सहायता</strong></p>
+                    <p>Local technical assistance and expert guidance</p>
+                </div>
+            </div>
+            <a href="#contact" class="btn">Get In Touch</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div>
+                    <h2>Rewanchal Cement Factory</h2>
+                    <p>Founded in 2020, Rewanchal Cement Factory has quickly established itself as a leader in local cement manufacturing. We are committed to producing high-quality cement that meets international standards while supporting local communities and infrastructure development.</p>
+                    <p>Our state-of-the-art facility combines traditional craftsmanship with modern technology to deliver cement that builds stronger foundations for India's growing economy.</p>
+                    <a href="#products" class="btn">Learn More About Our Products</a>
+                </div>
+                <div>
+                    <div class="support-card">
+                        <h3>🏭 Modern Manufacturing</h3>
+                        <p>Advanced production facilities with automated quality control systems.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>🏆 Quality Leadership</h3>
+                        <p>Consistent adherence to IS standards and continuous improvement processes.</p>
+                    </div>
+                    <div class="support-card">
+                        <h3>🎯 Local Focus</h3>
+                        <p>Supporting local construction and infrastructure development across the region.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Quality You Can Trust</h2>
+                <p>Our 50kg Rewanchal Cement bags deliver superior performance with innovative fly ash technology and strict quality control.</p>
+            </div>
+            <div class="products-hero" style="position: relative; min-height: 700px; margin-bottom: 3rem;">
+                <!-- Large cement bag image -->
+                <div style="position: absolute; left: -50px; top: -30px; width: 70%; z-index: 1;">
+                    <div style="position: relative; display: inline-block;">
+                        <!-- Glow effect behind image -->
+                        <div style="position: absolute; inset: -20px; background: linear-gradient(45deg, var(--red), var(--green), var(--yellow)); border-radius: 20px; filter: blur(20px); opacity: 0.3; z-index: -1;"></div>
+                        <!-- Main image -->
+                        <img src="images/cement-bag.png" alt="Rewanchal Cement Bag" style="width: 100%; max-width: 600px; height: auto; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.1); transform: perspective(1000px) rotateY(-5deg) rotateX(2deg); transition: all 0.4s ease; cursor: pointer;" onmouseover="this.style.transform='perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.05)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.4), 0 0 0 2px rgba(255,255,255,0.2)'" onmouseout="this.style.transform='perspective(1000px) rotateY(-5deg) rotateX(2deg) scale(1)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.1)'" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <!-- Decorative elements -->
+                        <div style="position: absolute; top: -10px; right: -10px; width: 30px; height: 30px; background: var(--red); border-radius: 50%; box-shadow: 0 4px 12px rgba(211, 47, 47, 0.4);"></div>
+                        <div style="position: absolute; bottom: -10px; left: -10px; width: 20px; height: 20px; background: var(--green); border-radius: 50%; box-shadow: 0 4px 12px rgba(56, 142, 60, 0.4);"></div>
+                    </div>
+                    <div style="display: none; background: #f0f0f0; border: 2px dashed #ccc; border-radius: 12px; padding: 2rem; text-align: center; color: #666;">
+                        <h4>📷 Cement Bag Photo</h4>
+                        <p>Put your cement bag photo in:<br><strong>images/cement-bag.png</strong></p>
+                    </div>
+                </div>
+                
+                <!-- Overlapping text box -->
+                <div style="position: absolute; right: -20px; top: 80px; width: 50%; background: linear-gradient(135deg, var(--red), var(--green)); color: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.1); z-index: 2; backdrop-filter: blur(10px);">
+                    <!-- Decorative corner elements -->
+                    <div style="position: absolute; top: -5px; right: -5px; width: 20px; height: 20px; background: var(--yellow); border-radius: 50%; box-shadow: 0 4px 12px rgba(253, 216, 53, 0.4);"></div>
+                    <div style="position: absolute; bottom: -5px; left: -5px; width: 15px; height: 15px; background: white; border-radius: 50%; opacity: 0.8;"></div>
+                    
+                    <h3 style="color: white; margin-bottom: 1.2rem; font-size: 2rem; font-weight: 900; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Rewanchal Cement 50kg</h3>
+                    <p style="margin-bottom: 1.8rem; opacity: 0.95; font-size: 1.1rem; line-height: 1.6;">Engineered for excellence with fly ash addition for enhanced durability and environmental sustainability. Our cement prioritizes innovation and quality in manufacturing.</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 2rem; font-size: 0.95rem;">
+                        <div style="background: rgba(255,255,255,0.1); padding: 0.5rem; border-radius: 8px; backdrop-filter: blur(5px);"><strong>Net Quantity:</strong> 50kg</div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 0.5rem; border-radius: 8px; backdrop-filter: blur(5px);"><strong>Standard:</strong> IS 1489 Part 1</div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 0.5rem; border-radius: 8px; backdrop-filter: blur(5px);"><strong>Compressive Strength:</strong> 43+ MPa</div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 0.5rem; border-radius: 8px; backdrop-filter: blur(5px);"><strong>Fly Ash Addition:</strong> Yes</div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 0.5rem; border-radius: 8px; backdrop-filter: blur(5px);"><strong>Durability:</strong> High</div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 0.5rem; border-radius: 8px; backdrop-filter: blur(5px);"><strong>Setting Time:</strong> 30-60 min</div>
+                    </div>
+                    <a href="#contact" class="btn" style="background: white; color: var(--red); padding: 12px 24px; font-size: 1.1rem; font-weight: 700; box-shadow: 0 8px 20px rgba(255,255,255,0.3); border: 2px solid rgba(255,255,255,0.2);">Read More</a>
+                </div>
+            </div>
+            
+            <!-- Performance table below -->
+            <div style="background: rgba(255,255,255,0.9); border-radius: 16px; padding: 2rem; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
+                <h4 style="text-align: center; margin-bottom: 1.5rem; font-size: 1.5rem;">Performance vs Standard</h4>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr style="border-bottom: 2px solid var(--red);">
+                        <th style="padding: 12px; text-align: left;">Metric</th>
+                        <th style="padding: 12px; text-align: center; color: var(--red);">Our Value</th>
+                        <th style="padding: 12px; text-align: center;">Standard</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ccc;">
+                        <td style="padding: 12px;">Compressive Strength</td>
+                        <td style="padding: 12px; text-align: center; color: var(--red); font-weight: bold;">43+ MPa</td>
+                        <td style="padding: 12px; text-align: center;">43 MPa</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ccc;">
+                        <td style="padding: 12px;">Fineness</td>
+                        <td style="padding: 12px; text-align: center; color: var(--red); font-weight: bold;">300+ m²/kg</td>
+                        <td style="padding: 12px; text-align: center;">300 m²/kg</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ccc;">
+                        <td style="padding: 12px;">Setting Time</td>
+                        <td style="padding: 12px; text-align: center; color: var(--red); font-weight: bold;">30-60 min</td>
+                        <td style="padding: 12px; text-align: center;">30-60 min</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="support" class="support">
+        <div class="container">
+            <div class="section-header">
+                <h2>Technical Services & Support</h2>
+                <p>We provide comprehensive technical support and services to ensure your construction projects succeed with our cement.</p>
+            </div>
+            <div class="support-grid">
+                <div class="support-card">
+                    <h3>🔧 On-Site Technical Assistance</h3>
+                    <p>Our expert technicians provide on-site support for construction projects, ensuring proper cement application and optimal results.</p>
+                    <ul>
+                        <li>Site visits</li>
+                        <li>Application guidance</li>
+                        <li>Quality monitoring</li>
+                        <li>Problem solving</li>
+                    </ul>
+                </div>
+                <div class="support-card">
+                    <h3>🎓 Masonry Training Programs</h3>
+                    <p>Comprehensive training programs for masons and construction workers to improve skills and cement usage efficiency.</p>
+                    <ul>
+                        <li>Hands-on training</li>
+                        <li>Best practices</li>
+                        <li>Safety protocols</li>
+                        <li>Certification programs</li>
+                    </ul>
+                </div>
+                <div class="support-card">
+                    <h3>🚚 Efficient Logistics</h3>
+                    <p>Reliable and timely delivery of cement to your construction site with our optimized logistics network.</p>
+                    <ul>
+                        <li>Timely delivery</li>
+                        <li>Bulk orders</li>
+                        <li>Site coordination</li>
+                        <li>Quality assurance</li>
+                    </ul>
+                </div>
+                <div class="support-card">
+                    <h3>🎧 24/7 Customer Support</h3>
+                    <p>Round-the-clock customer support to address your queries and provide technical assistance whenever needed.</p>
+                    <ul>
+                        <li>24/7 availability</li>
+                        <li>Technical queries</li>
+                        <li>Order support</li>
+                        <li>Emergency assistance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Ready to start your construction project? Contact us for quality cement and expert technical support.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div style="margin: 1rem 0;">
+                        <h4>📞 Phone Numbers</h4>
+                        <p><a href="tel:7000065072" style="color: var(--red);">7000065072</a></p>
+                        <p><a href="tel:6393552663" style="color: var(--red);">6393552663</a></p>
+                        <p><a href="tel:9839418591" style="color: var(--red);">9839418591</a></p>
+                    </div>
+                    <div style="margin: 1rem 0;">
+                        <h4>📍 Factory Address</h4>
+                        <p>Rewanchal Cement Factory<br>Industrial Area, District Name<br>State, India - 123456</p>
+                    </div>
+                    <div style="margin: 1rem 0;">
+                        <h4>✉️ Email</h4>
+                        <p><a href="mailto:info@rewanchalcement.com" style="color: var(--red);">info@rewanchalcement.com</a></p>
+                    </div>
+                    <div style="margin: 1rem 0;">
+                        <h4>🕒 Business Hours</h4>
+                        <p>Monday - Saturday: 8:00 AM - 6:00 PM<br>Sunday: 9:00 AM - 4:00 PM</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form onsubmit="handleFormSubmit(event)">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                            <div>
+                                <label>Name *</label>
+                                <input type="text" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                            </div>
+                            <div>
+                                <label>Phone *</label>
+                                <input type="tel" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <label>Email *</label>
+                            <input type="email" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <label>Subject</label>
+                            <select style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                                <option>General Inquiry</option>
+                                <option>Product Information</option>
+                                <option>Technical Support</option>
+                                <option>Bulk Order</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <label>Message *</label>
+                            <textarea required rows="4" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">📤 Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="logo" style="margin-bottom: 1rem;">
+                        <div class="logo-icon" style="background-image: url('images/logo.png'); background-size: contain; background-repeat: no-repeat; background-position: center; width: 70px; height: 70px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">🐯</div>
+                        <div class="logo-text">Rewanchal Cement</div>
+                    </div>
+                    <p style="margin-bottom: 1rem;">Building strong foundations for India's future with quality cement and expert technical support.</p>
+                    <p>📞 7000065072, 6393552663, 9839418591</p>
+                    <p>✉️ info@rewanchalcement.com</p>
+                    <p>📍 Industrial Area, District, State, India</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <p><a href="#home" style="color: white;">Home</a></p>
+                    <p><a href="#about" style="color: white;">About Us</a></p>
+                    <p><a href="#products" style="color: white;">Products</a></p>
+                    <p><a href="#support" style="color: white;">Support</a></p>
+                    <p><a href="#contact" style="color: white;">Contact</a></p>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <p>Technical Support</p>
+                    <p>Masonry Training</p>
+                    <p>Bulk Delivery</p>
+                    <p>Quality Assurance</p>
+                    <p>On-site Assistance</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 2rem; margin-top: 2rem; text-align: center;">
+                <p>© 2025 Rewanchal Cement. All rights reserved. | Built with quality and precision</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            event.target.reset();
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Debug: Check if images are loading
+        window.addEventListener('load', function() {
+            console.log('Checking images...');
+            
+            // Test logo
+            const logoImg = new Image();
+            logoImg.onload = function() {
+                console.log('Logo loaded successfully');
+                document.querySelectorAll('.logo-icon').forEach(icon => {
+                    icon.style.backgroundImage = 'url(images/logo.png)';
+                    icon.innerHTML = '';
+                });
+            };
+            logoImg.onerror = function() {
+                console.log('Logo failed to load');
+            };
+            logoImg.src = 'images/logo.png';
+            
+            // Test cement bag
+            const bagImg = new Image();
+            bagImg.onload = function() {
+                console.log('Cement bag loaded successfully');
+            };
+            bagImg.onerror = function() {
+                console.log('Cement bag failed to load');
+            };
+            bagImg.src = 'images/cement-bag.png';
+        });
+    </script>
+</body>
+</html>

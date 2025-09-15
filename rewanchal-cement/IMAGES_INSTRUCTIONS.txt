@@ -1,0 +1,28 @@
+📁 IMAGES SETUP INSTRUCTIONS
+
+Put your images in the "images" folder with these EXACT names:
+
+1. LOGO:
+   - File name: logo.png (or logo.jpg)
+   - Location: images/logo.png
+   - Used in: Header and Footer
+
+2. CEMENT BAG:
+   - File name: cement-bag.jpg (or cement-bag.png)  
+   - Location: images/cement-bag.jpg
+   - Used in: Products section
+
+📂 Folder structure should look like:
+rewanchal-cement/
+├── website.html
+├── images/
+│   ├── logo.png
+│   └── cement-bag.jpg
+└── README.md
+
+✅ After adding images, just open website.html in your browser!
+
+💡 Tips:
+- Logo should be square or circular for best results
+- Cement bag photo should be clear and well-lit
+- Supported formats: .jpg, .jpeg, .png, .gif

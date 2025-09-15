@@ -1,0 +1,14 @@
+<svg width="512" height="640" viewBox="0 0 512 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="40" y="40" width="432" height="560" rx="24" fill="#FFF8E1" stroke="#BDBDBD" stroke-width="4"/>
+  <path d="M56 120H456" stroke="#D32F2F" stroke-width="12"/>
+  <path d="M56 520H456" stroke="#D32F2F" stroke-width="12"/>
+  <rect x="88" y="168" width="336" height="304" rx="16" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="4"/>
+  <text x="256" y="230" text-anchor="middle" font-family="Anton, Arial Black, sans-serif" font-size="48" fill="#212121">REWANCHAL</text>
+  <text x="256" y="280" text-anchor="middle" font-family="Anton, Arial Black, sans-serif" font-size="44" fill="#212121">CEMENT</text>
+  <text x="256" y="340" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" fill="#388E3C">IS 1489 (Part 1)</text>
+  <text x="256" y="380" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" fill="#388E3C">Fly Ash Added</text>
+  <rect x="196" y="404" width="120" height="48" rx="8" fill="#D32F2F"/>
+  <text x="256" y="436" text-anchor="middle" font-family="Anton, Arial Black, sans-serif" font-size="28" fill="#FFFFFF">50 KG</text>
+</svg>
+
+
